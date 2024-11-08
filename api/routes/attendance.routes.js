@@ -14,7 +14,7 @@ const {
   list_attendance_user,
 } = attendance_controller;
 router.post("/", uploadFile, protect, callbackHandle(create_attendance));
-router.get("/", protect, callbackHandle(list_attendance));
+router.get("/", callbackHandle(list_attendance));
 router.get("/:id", callbackHandle(detail_attendance));
 router.put("/:id", uploadFile, protect, callbackHandle(change_status));
 router.get("/user/:id", callbackHandle(list_attendance_user));
